@@ -1,0 +1,31 @@
+networks:
+  catalogo-net:
+
+services:
+  backend:
+    build:
+      context: "./Backend"
+      dockerfile: "../Infra/Containers/Dev/Dockerfile.backend"
+    container_name: "backend"
+    # depends_on:
+    #   - redis
+    ports:
+      - "8089:80/tcp"
+    networks:
+      - catalogo-net
+    restart: on-failure
+    volumes:
+      - ./Backend:/var/www/html
+
+  frontend:
+    build:
+      context: "./Frontend"
+      dockerfile: "../Infra/Containers/Dev/Dockerfile.frontend"
+    container_name: "frontend"
+    ports:
+      - "8088:80/tcp"
+    networks:
+      - catalogo-net
+    restart: on-failure
+    volumes:
+      - ./Frontend:/app/

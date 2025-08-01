@@ -1,0 +1,10 @@
+includes:
+    - phpstan-baseline.neon
+parameters:
+    level: 7
+    paths:
+        - public
+        - src
+        - tests
+    bootstrapFiles:
+        - vendor/autoload.php

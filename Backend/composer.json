@@ -1,0 +1,41 @@
+{
+    "name": "nicolahsss/catalogo",
+    "description": "Catalogo Simples",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NHS\\Catalogo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse --memory-limit=2G",
+        "audit": "composer audit --locked",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run --diff -v",
+        "fix": [
+            "php-cs-fixer fix --allow-risky=yes",
+            "phpcs --standard=PSR12 --extensions=php src/ tests/"
+        ],
+        "migrate": "phinx migrate",
+        "seed": "phinx seed:run"
+    },
+    "authors": [
+        {
+            "name": "Nicola",
+            "email": "nicola@seraf.im"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.13",
+        "phpunit/phpunit": "^11.5",
+        "friendsofphp/php-cs-fixer": "^3.84",
+        "phpstan/phpstan": "^2.1"
+    }
+}

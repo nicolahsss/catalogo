@@ -1,0 +1,9 @@
+.github @nicolahsss
+.php-cs-fixer.dist.php @nicolahsss
+Dockerfile* @nicolahsss
+nginx.conf @nicolahsss
+phpstan.neon.dist @nicolahsss
+phpstan-baseline.neon @nicolahsss
+phpunit.php @nicolahsss
+phpunit.xml @nicolahsss
+README.md @nicolahsss
